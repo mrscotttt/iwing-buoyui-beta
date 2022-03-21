@@ -2,9 +2,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Athiti:wght@200;500&family=Prompt:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&family=Prompt:wght@500&family=Sarabun:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Prompt:ital,wght@0,200;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.textbox {
+  background-color: #6640cf;
+}
+
 .App {
-    text-align: center;
-  }
+  height: 100vh;
+  width: 100%;
+}
+
+.circle {
+  background: #d83b01;
+  border-radius: 50%;
+  color: #fff;
+  height: 2.5em;
+  position: relative;
+  width: 2.5em;
+
+  border: 1px solid transparent;
+}
+
+.circleText {
+  text-align: center;
+  height: 50%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+
   
   .App-logo {
     height: 40vmin;
@@ -17,21 +51,26 @@
     }
   }
 
+  .dark {
+    background-color:#313132;
+  }
   .App-main {
-    background-image: url("../img/sea04.jpg");
     /*font-family: 'Sarabun', sans-serif;*/
+    /*background-color:#819BFF;*/
     font-family: 'Prompt', sans-serif;
+    background-image: url("../img/sea06.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
-    
+    background-size: 100% 100% ;
     /*
     background-color: #77ecbc;
     font-family: 'Sarabun', sans-serif;
     font-family: 'Prompt', sans-serif;
     */
     /* Center and scale the image nicely */
-    
-    
+  }
+
+  .App-main2 {
+    font-family: 'Sarabun', sans-serif;
   }
 
   .center {
@@ -77,6 +116,101 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
+  }
+  
+  .wrapper {
+    display: inline-flex;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background-color: #6640cf;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 5px;
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background-color: #3b5999;
+    color: #ffffff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background-color: #46c1f6;
+    color: #ffffff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background-color: #e1306c;
+    color: #ffffff;
+  }
+  
+  .wrapper .github:hover,
+  .wrapper .github:hover .tooltip,
+  .wrapper .github:hover .tooltip::before {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  .wrapper .youtube:hover,
+  .wrapper .youtube:hover .tooltip,
+  .wrapper .youtube:hover .tooltip::before {
+    background-color: #de463b;
+    color: #ffffff;
   }
 
 

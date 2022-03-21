@@ -16,42 +16,24 @@ const Headbar = () => {
       .then(product => setProduct(product))
       console.log(product)
   },[])
-
-  const Logout=()=> {
-    localStorage.clear();
-    window.location.href = '/login';
-}
   
   return (
     <div className="App-main">
-      <Navbar bg="dark" variant="dark">
+      <Navbar className="dark" variant="dark" >
       <Container>
-      <Navbar.Brand href="#home">DataBuoy</Navbar.Brand>
-      <Nav className="mr-auto" variant="pills">
+      <Navbar.Brand href="/main"><h3>DataBuoy</h3></Navbar.Brand>
       
-      <Dropdown>
-      <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-        เลือกวันที่
-      </Dropdown.Toggle>
-      <Dropdown.Menu >
-      {product.map( el=> (<Dropdown.Item key={el.id}>{el.dd}/{el.mm}/{el.yy}</Dropdown.Item>))}
-      </Dropdown.Menu>
-    
-      </Dropdown>
+      <Nav className="mr-auto" variant="pills">
     
       </Nav>
+      
       <Form inline>
       <Navbar.Brand></Navbar.Brand>
-      <Button variant="light" 
-              href="/login" 
-              size="sm"
-      >
-      <Icon.BoxArrowRight/></Button>
+              
       </Form>
       </Container>
       </Navbar>
     </div>
   );
 }
-
 export default Headbar;
